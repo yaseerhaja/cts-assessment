@@ -1,0 +1,29 @@
+.app-import-file {
+  .no-data {
+    min-height: 400px;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 400px;
+    width: 100%;
+  }
+  p {
+    margin: 30px 10px;
+  }
+  .form-group {
+    margin: 10px;
+    float: right;
+  }
+  .table {
+    margin: 0px 10px;
+  }
+  table {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-import-file {
+    margin-bottom: 63px;
+  }
+}
