@@ -31,8 +31,7 @@ router.post("/csvFile", multipartMiddleware, (req, res) => {
   }
   var tmp_path = req.files.fileKey.path;
   var target_path = "./tmp/" + req.files.fileKey.name;
-  fs.rename(tmp_path, target_path, function (err) {
-    if (err) throw err;
+  //fs.rename(tmp_path, target_path, function (err) {
     let data = [];
     fs.createReadStream(target_path)
       .pipe(csv())
@@ -45,10 +44,10 @@ router.post("/csvFile", multipartMiddleware, (req, res) => {
         console.log("CSV file successfully processed");
       });
 
-    fs.unlink(tmp_path, function () {
-      if (err) throw err;
-    });
-  });
+    // fs.unlink(tmp_path, function () {
+    //   if (err) throw err;
+    // });
+  //});
 });
 
 module.exports = router;
