@@ -7,11 +7,11 @@
           <mat-icon>error</mat-icon>
           Login Failed.
         </div>
-        <form [formGroup]="loginFormGroup">
+        <form class="login-form-grp" [formGroup]="loginFormGroup">
           <div class="flex row username">
             <div class="flex-input">
               <mat-form-field>
-                <mat-icon matPrefix>perm_identity</mat-icon>
+                <mat-icon class="icon" matPrefix>perm_identity</mat-icon>
                 <input matInput [attr.disabled]="true" placeholder="UserName" type="text" formControlName="username"
                   value="">
                 <mat-error *ngIf="hasError('username', 'required')">Required !</mat-error>
@@ -21,7 +21,7 @@
           <div class="flex row password">
             <div class="flex-input">
               <mat-form-field>
-                <mat-icon matPrefix>lock</mat-icon>
+                <mat-icon class="icon" matPrefix>lock</mat-icon>
                 <input matInput [attr.disabled]="true" placeholder="Password" autocomplete="on" type="password"
                   formControlName="password">
                 <mat-error *ngIf="hasError('password', 'required')">Required !</mat-error>

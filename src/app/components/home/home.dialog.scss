@@ -10,6 +10,10 @@
     justify-content: flex-start;
   }
 
+  .form-field{
+    margin: 5px 0px;
+  }
+
   .action{
     justify-content: flex-end;
     display: flex;
@@ -28,6 +32,6 @@
 
 @media (max-width: 640px) {
   .dialog-form {
-    width: auto;
+    width: 220px;
   }
 }

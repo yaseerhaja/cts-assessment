@@ -62,6 +62,6 @@ export class HomeDialogComponent implements OnInit {
   }
 
   resetForm() {
-
+    this.newEmpFormGroup.reset();
   }
 }

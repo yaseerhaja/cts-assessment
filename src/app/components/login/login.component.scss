@@ -56,6 +56,13 @@
       height: auto;
     }
 
+    .login-form-grp{
+      margin-top: 20px;
+      .icon{
+        margin-right: 5px;
+      }
+    }
+
     .login-form {
       padding: 20px;
     }
@@ -95,10 +102,10 @@
   .login {
     section {
       align-items: center;
+      background-size: contain;
       height: auto;
       mat-card {
         border: 0px;
-        box-shadow: none;
         width: 80%;
         top: 293px;
         position: relative;

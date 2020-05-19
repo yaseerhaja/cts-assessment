@@ -14,17 +14,27 @@
         </button>
       </div>
       <div class="type">
-        <mat-icon title="As Table" (click)="toggleType('table')" [ngClass]="{'active': displayType ==='table'}">table_chart</mat-icon>
-        <mat-icon title="As Card" (click)="toggleType('card')" [ngClass]="{'active': displayType ==='card'}">credit_card</mat-icon>
+        <mat-icon title="As Table" (click)="toggleType('table')" [ngClass]="{'active': displayType ==='table'}">
+          table_chart</mat-icon>
+        <mat-icon title="As Card" (click)="toggleType('card')" [ngClass]="{'active': displayType ==='card'}">credit_card
+        </mat-icon>
       </div>
     </div>
     <div class="employee-list" [ngClass]="{'hide': displayType ==='table'}">
       <ng-container *ngFor="let i of employeeListFiltered">
         <mat-card class="card">
           <mat-card-header>
-            <mat-card-title>{{i.employee_name}}</mat-card-title>
-            <mat-card-subtitle>Salary : {{i.employee_salary | currency:'EUR'}}</mat-card-subtitle>
-            <mat-card-subtitle>Age : {{i.employee_age}}</mat-card-subtitle>
+            <div class="container">
+              <div class="details">
+                <mat-card-title>{{i.employee_name}}</mat-card-title>
+                <mat-card-subtitle>Salary : {{i.employee_salary | currency:'EUR'}}</mat-card-subtitle>
+                <mat-card-subtitle>Age : {{i.employee_age}}</mat-card-subtitle>
+              </div>
+              <div class="img">
+                <img src="../../../assets/images/noPhotoAvailable.jpg" style="width: 80px;" alt="">
+              </div>
+            </div>
+
           </mat-card-header>
         </mat-card>
       </ng-container>
