@@ -7,12 +7,19 @@
     line-height: 400px;
     width: 100%;
   }
+  button.primary{
+    background: #b931d9;
+    color: #fff;
+  }
   p {
     margin: 30px 10px;
   }
   .form-group {
     margin: 10px;
     float: right;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 4px 1px #ddd;
+    padding: 10px;
   }
   .table {
     margin: 0px 10px;

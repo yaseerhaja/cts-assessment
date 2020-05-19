@@ -2,7 +2,7 @@
   <p>Import a Csv File</p>
   <div class="form-group">
     <input type="file" id="file" name="csv" accept=".csv" (change)="handleFileInput($event.target.files)">
-    <button mat-stroked-button title="Upload" (click)="uploadFileToActivity();">
+    <button class="primary" mat-stroked-button title="Upload" (click)="uploadFileToActivity();">
       Upload
     </button>
   </div>

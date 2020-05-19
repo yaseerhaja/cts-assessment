@@ -42,6 +42,11 @@ router.post("/csvFile", multipartMiddleware, (req, res) => {
     .on("end", () => {
       res.send(data);
       console.log("CSV file successfully processed");
+      fs.unlink(target_path, function (err) {
+        if (err) throw err;
+        // if no error, file has been deleted successfully
+        console.log("File deleted!");
+      });
     });
 });
 
