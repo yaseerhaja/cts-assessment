@@ -9,7 +9,7 @@ const fs = require("fs");
 const logger = require("../../logger");
 const API_END_POINT = process.env.API_END_POINT;
 
-var dir = "./server/public/uploads/";
+var dir = "./tmp/";
 
 const replaceKeys = (object) => {
   Object.keys(object).forEach(function (key) {
@@ -30,7 +30,7 @@ router.post("/csvFile", multipartMiddleware, (req, res) => {
     fs.mkdirSync(dir);
   }
   var tmp_path = req.files.fileKey.path;
-  var target_path = "./server/public/uploads/" + req.files.fileKey.name;
+  var target_path = "./tmp/" + req.files.fileKey.name;
   fs.rename(tmp_path, target_path, function (err) {
     if (err) throw err;
     let data = [];
