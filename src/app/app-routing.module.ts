@@ -22,10 +22,12 @@ const routes: Routes = [
   },
   {
     path: 'import',
+    canActivate: [AuthService],
     component: ImportFileComponent,
   },
   {
     path: 'tech',
+    canActivate: [AuthService],
     component: TechComponent,
   },
   { path: '', redirectTo: '/tech', pathMatch: 'full' },
