@@ -8,12 +8,12 @@
     width: 100%;
   }
 
-  .filter{
+  .filter {
     margin-top: 20px;
     font-size: 14px;
   }
 
-  button.primary{
+  button.primary {
     background: #b931d9;
     color: #fff;
   }
@@ -22,15 +22,21 @@
     font-size: 24px;
     text-align: center;
   }
-  .form-group {
-    margin: 10px;
-    float: right;
-    border: 1px solid #ddd;
-    box-shadow: 3px 3px 4px 1px #ddd;
-    padding: 10px;
+  .form-group-cnt {
+    display: flex;
+    justify-content: flex-end;
+    .form-group {
+      margin: 10px;
+      float: right;
+      border: 1px solid #ddd;
+      box-shadow: 3px 3px 4px 1px #ddd;
+      padding: 10px;
+    }
   }
+
   .table {
     margin: 0px 10px;
+    position: relative;
   }
   table {
     width: 100%;

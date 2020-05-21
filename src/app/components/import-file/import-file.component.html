@@ -1,24 +1,22 @@
 <div class="app-import-file">
   <p>Import a Csv File</p>
-  <div class="form-group">
-    <input type="file" id="file" name="csv" accept=".csv" (change)="handleFileInput($event.target.files)">
-    <button class="primary" mat-stroked-button title="Upload" (click)="uploadFileToActivity();">
-      Upload
-    </button>
-
-    <div class="filter" *ngIf="this.dataList.length > 0">
-      <span>Filter Issue Count </span>
-      <mat-slider (change)="onSliderInputChange($event)" class="example-margin"
-        [disabled]="false" [invert]="false"
-        [max]="maxSliderValue" [min]="1" [step]="1"
-        [(ngModel)]="sliderValue"
-        [vertical]="false">
-      </mat-slider>
-      <span>{{sliderValue}} </span>
+  <div class="form-group-cnt">
+    <div class="form-group">
+      <input type="file" id="file" name="csv" accept=".csv" (change)="handleFileInput($event.target.files)">
+      <button class="primary" mat-stroked-button title="Upload" (click)="uploadFileToActivity();">
+        Upload
+      </button>
+      <div class="filter" *ngIf="this.dataList.length > 0">
+        <span>Filter Issue Count </span>
+        <mat-slider (change)="onSliderInputChange($event)" class="example-margin" [disabled]="false" [invert]="false"
+          [max]="maxSliderValue" [min]="1" [step]="1" [(ngModel)]="sliderValue" [vertical]="false">
+        </mat-slider>
+        <span>{{sliderValue}} </span>
+      </div>
     </div>
-
   </div>
-  <div class="table">
+
+  <div class="table tbl-import be-loading">
     <table mat-table [dataSource]="dataSource" #dataSort="matSort" matSort class="mat-elevation-z8">
       <ng-container matColumnDef="First_name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
@@ -46,5 +44,8 @@
     <div class="no-data" *ngIf="dataList && dataList.length === 0">No records found.</div>
     <mat-paginator class="paginator" #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
     </mat-paginator>
+    <div class="be-spinner"><svg height="40px" viewBox="0 0 66 66" width="40px" xmlns="http://www.w3.org/2000/svg">
+        <circle class="circle" cx="33" cy="33" fill="none" r="30" stroke-linecap="round" stroke-width="4"></circle>
+      </svg></div>
   </div>
 </div>

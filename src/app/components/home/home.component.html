@@ -39,7 +39,7 @@
         </mat-card>
       </ng-container>
     </div>
-    <div class="employee-list table" [ngClass]="{'hide': displayType ==='card'}">
+    <div class="employee-list table tbl-home be-loading" [ngClass]="{'hide': displayType ==='card'}">
       <table mat-table [dataSource]="dataSource" #dataSort="matSort" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="employee_name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
@@ -62,6 +62,9 @@
       <div class="no-data" *ngIf="employeeListFiltered && employeeListFiltered.length === 0">No records found.</div>
       <mat-paginator class="paginator" #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
       </mat-paginator>
+      <div class="be-spinner"><svg height="40px" viewBox="0 0 66 66" width="40px" xmlns="http://www.w3.org/2000/svg">
+        <circle class="circle" cx="33" cy="33" fill="none" r="30" stroke-linecap="round" stroke-width="4"></circle>
+      </svg></div>
     </div>
   </div>
 </section>

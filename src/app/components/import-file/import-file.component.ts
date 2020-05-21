@@ -42,9 +42,14 @@ export class ImportFileComponent implements OnInit {
   }
 
   uploadFileToActivity() {
+    const el = document.getElementsByClassName('tbl-import')[0];
+    el.classList.add('be-loading-active');
+
     this.appService.postFile(this.fileToUpload).subscribe(data => {
       // do something, if upload success
       this.dataList = data;
+      el.classList.remove('be-loading-active');
+
       this.dataSource = new MatTableDataSource(this.dataList);
       if (this.dataList.length) {
         // tslint:disable-next-line: only-arrow-functions
@@ -57,6 +62,7 @@ export class ImportFileComponent implements OnInit {
       setTimeout(() => this.dataSource.paginator = this.paginator, 200);
     }, error => {
       console.log(error);
+      el.classList.remove('be-loading-active');
     });
   }
 }

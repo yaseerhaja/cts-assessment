@@ -45,11 +45,11 @@ export class HomeComponent implements OnInit {
   }
 
   getEmployeeList() {
-    //const el = document.getElementsByClassName('flight-details')[0];
-    //el.classList.add('be-loading-active');
+    const el = document.getElementsByClassName('tbl-home')[0];
+    el.classList.add('be-loading-active');
 
     this.appService.getEmployeeList().subscribe(data => {
-      //el.classList.remove('be-loading-active');
+      el.classList.remove('be-loading-active');
       if (data && data.data.length) {
         this.employeeList = data.data;
         this.employeeListFiltered = data.data;
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
       this.employeeList = [];
       this.employeeListFiltered = [];
       this.dataSource = new MatTableDataSource([]);
-      //el.classList.remove('be-loading-active');
+      el.classList.remove('be-loading-active');
     });
   }
 
