@@ -12,6 +12,8 @@ import { MatPaginator } from '@angular/material/paginator';
 export class ImportFileComponent implements OnInit {
   fileToUpload: File = null;
   dataList: any = [];
+  sliderValue = 1;
+  maxSliderValue = 1;
   displayedColumns: string[] = ['First_name',
     'Sur_name', 'Issue_count', 'Date_of_birth'];
   dataSource: MatTableDataSource<any>;
@@ -27,11 +29,30 @@ export class ImportFileComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
 
+  onSliderInputChange(e) {
+    let filteredArr = this.dataList.slice();
+
+    filteredArr = filteredArr.filter(o => {
+      return (parseInt(o.Issue_count, 10) <= this.sliderValue);
+    });
+
+    this.dataSource = new MatTableDataSource(filteredArr);
+    this.dataSource.sort = this.dataSort;
+    setTimeout(() => this.dataSource.paginator = this.paginator, 200);
+  }
+
   uploadFileToActivity() {
     this.appService.postFile(this.fileToUpload).subscribe(data => {
       // do something, if upload success
       this.dataList = data;
       this.dataSource = new MatTableDataSource(this.dataList);
+      if (this.dataList.length) {
+        // tslint:disable-next-line: only-arrow-functions
+        const val = Math.max.apply(Math, this.dataList.map(function (o) { return parseInt(o.Issue_count, 10); }));
+
+        this.maxSliderValue = val;
+        this.sliderValue = val;
+      }
       this.dataSource.sort = this.dataSort;
       setTimeout(() => this.dataSource.paginator = this.paginator, 200);
     }, error => {

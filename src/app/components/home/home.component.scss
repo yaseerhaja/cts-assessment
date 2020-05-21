@@ -1,8 +1,10 @@
 #home-page {
+  font-size: 12px;
+
   .filter {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: center;
     margin: 20px 20px;
 
     .setting {
@@ -40,14 +42,18 @@
     text-align: center;
     margin: 0 auto;
     line-height: 400px;
-    width: 100%;
+    width: 60%;
   }
 
   .employee-list {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     margin: 0px 10px;
+
+    &.card {
+      justify-content: flex-start;
+    }
 
     .container {
       width: 100%;
@@ -55,7 +61,7 @@
       flex-flow: row wrap;
       justify-content: flex-start;
 
-      .details{
+      .details {
         width: 70%;
       }
     }
@@ -64,12 +70,11 @@
       display: none;
     }
 
-    table {
-      width: 100%;
-    }
+    table,
     .paginator {
-      width: 100%;
+      width: 60%;
     }
+
     .card {
       height: 100px;
       width: 300px;
@@ -84,6 +89,17 @@
 
     .filter {
       margin: 10px 20px;
+    }
+
+    .no-data {
+      width: 100%;
+    }
+
+    .employee-list {
+      table,
+      .paginator {
+        width: 100%;
+      }
     }
   }
 }

@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeDialogComponent } from './components/home/home.dialog';
 import { ImportFileComponent } from './components/import-file/import-file.component';
+import { TechComponent } from './components/tech/tech.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { ImportFileComponent } from './components/import-file/import-file.compon
     HomeComponent,
     HomeDialogComponent,
     ErrorComponent,
+    TechComponent,
     ImportFileComponent
   ],
   imports: [
@@ -56,6 +59,7 @@ import { ImportFileComponent } from './components/import-file/import-file.compon
     MatButtonToggleModule,
     MatToolbarModule,
     MatPaginatorModule,
+    MatSliderModule,
     MatMenuModule
   ],
   providers: [],

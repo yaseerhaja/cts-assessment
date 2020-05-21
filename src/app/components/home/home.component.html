@@ -20,7 +20,7 @@
         </mat-icon>
       </div>
     </div>
-    <div class="employee-list" [ngClass]="{'hide': displayType ==='table'}">
+    <div class="employee-list card" [ngClass]="{'hide': displayType ==='table'}">
       <ng-container *ngFor="let i of employeeListFiltered">
         <mat-card class="card">
           <mat-card-header>
@@ -39,7 +39,7 @@
         </mat-card>
       </ng-container>
     </div>
-    <div class="employee-list" [ngClass]="{'hide': displayType ==='card'}">
+    <div class="employee-list table" [ngClass]="{'hide': displayType ==='card'}">
       <table mat-table [dataSource]="dataSource" #dataSort="matSort" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="employee_name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>

@@ -1,0 +1,107 @@
+.tech-cls {
+  margin: 10px;
+  p {
+    font-size: 24px;
+  }
+  ul {
+    li.items {
+      list-style: none;
+      margin: 20px 10px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  }
+
+  .fe-cls,
+  .be-cls {
+    margin-bottom: 30px;
+    .container {
+      margin: 20px 0px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+    }
+    .icon-fe-stack,
+    .icon-be-stack {
+      margin: 0px 10px;
+
+      svg {
+        width: 54px;
+        height: 57px;
+      }
+
+      svg#svg123 {
+        .st0 {
+          fill: #007acc;
+        }
+        .st1 {
+          fill: #fff;
+        }
+      }
+      svg#svg4525 {
+        .st0 {
+          fill: #d4b830;
+        }
+        .st1,
+        .st2 {
+          opacity: 0.986;
+          fill: #ebebeb;
+          fill-opacity: 0;
+          enable-background: new;
+        }
+        .st2 {
+          fill-opacity: 0.9216;
+        }
+        .st3 {
+          fill: #fdd83c;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns - IpadPro*/
+@media (max-width: 1024px) {
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns - Ipad/Tablet */
+@media (max-width: 800px) {
+  .tech-cls {
+    .project-desc {
+      p {
+        font-size: 24px;
+      }
+
+      li.items {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other - Mobile*/
+@media (max-width: 600px) {
+  .tech-cls {
+    .project-desc {
+      p {
+        font-size: 22px;
+      }
+
+      li.items {
+        font-size: 14px;
+        margin: 10px 0px;
+      }
+    }
+    .fe-cls,
+    .be-cls {
+      margin-bottom: 25px;
+      .icon-fe-stack,
+      .icon-be-stack {
+        svg {
+          width: 38px;
+          height: 38px;
+        }
+      }
+    }
+  }
+}

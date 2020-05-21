@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { AuthService } from './auth/auth.service';
 import { ImportFileComponent } from './components/import-file/import-file.component';
+import { TechComponent } from './components/tech/tech.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,11 @@ const routes: Routes = [
     path: 'import',
     component: ImportFileComponent,
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'tech',
+    component: TechComponent,
+  },
+  { path: '', redirectTo: '/tech', pathMatch: 'full' },
   { path: '**', component: ErrorComponent }];
 
 

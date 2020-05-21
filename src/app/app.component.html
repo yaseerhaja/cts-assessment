@@ -4,6 +4,10 @@
     <router-outlet #routerOutlet="outlet"></router-outlet>
   </section>
   <mat-toolbar class="toolbarNav" *ngIf="hasLoggedIn">
+    <button class="toolbar-button" mat-button routerLink="/tech" routerLinkActive="active">
+      <mat-icon class="material-icons color_blue">subject</mat-icon>
+      <span class="title">Assessment</span>
+    </button>
     <button class="toolbar-button" mat-button routerLink="/home" routerLinkActive="active">
       <mat-icon class="material-icons color_blue">person</mat-icon>
       <span class="title">Employee Detail</span>

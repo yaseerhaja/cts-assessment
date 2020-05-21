@@ -1,13 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const request = require("request");
 const multipart = require("connect-multiparty");
 const multipartMiddleware = multipart({ uploadDir: "./tmp/" });
 const csv = require("csv-parser");
 const fs = require("fs");
-
 const logger = require("../../logger");
-const API_END_POINT = process.env.API_END_POINT;
 
 var dir = "./tmp";
 if (!fs.existsSync(dir)) {

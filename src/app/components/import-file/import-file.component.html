@@ -5,6 +5,18 @@
     <button class="primary" mat-stroked-button title="Upload" (click)="uploadFileToActivity();">
       Upload
     </button>
+
+    <div class="filter" *ngIf="this.dataList.length > 0">
+      <span>Filter Issue Count </span>
+      <mat-slider (change)="onSliderInputChange($event)" class="example-margin"
+        [disabled]="false" [invert]="false"
+        [max]="maxSliderValue" [min]="1" [step]="1"
+        [(ngModel)]="sliderValue"
+        [vertical]="false">
+      </mat-slider>
+      <span>{{sliderValue}} </span>
+    </div>
+
   </div>
   <div class="table">
     <table mat-table [dataSource]="dataSource" #dataSort="matSort" matSort class="mat-elevation-z8">
